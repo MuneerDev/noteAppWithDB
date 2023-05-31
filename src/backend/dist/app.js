@@ -33,8 +33,10 @@ const dataSource = new typeorm_1.DataSource({
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield dataSource.initialize().then((e) => console.log("Database started"));
-            app.listen(5001, () => console.log("server started"));
+            yield dataSource.initialize().then((e) => {
+                console.log("Database started");
+                app.listen(5001, () => console.log("server started"));
+            });
         }
         catch (e) {
             console.log(`error is : ${e}`);

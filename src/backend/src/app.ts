@@ -24,8 +24,10 @@ const dataSource = new DataSource({
 
 async function run() {
   try {
-    await dataSource.initialize().then((e) => console.log("Database started"));
-    app.listen(5001, () => console.log("server started"));
+    await dataSource.initialize().then((e) => {
+      console.log("Database started");
+      app.listen(5001, () => console.log("server started"));
+    });
   } catch (e) {
     console.log(`error is : ${e}`);
   }
